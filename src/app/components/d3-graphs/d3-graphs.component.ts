@@ -27,7 +27,6 @@ export class D3GraphsComponent implements OnInit {
   ngOnInit() {
     this.removeSvg = '#' + this.graphType + ' > *';
     this.graphSelector = '#' + this.graphType;
-    console.log('helloDeeksha graph type is', this.graphType, this.removeSvg);
     this.subscription = this.d3GraphService.getD3Graph(this.graphType).subscribe((result) => {
         this.data = result;
         if (this.data != null) {

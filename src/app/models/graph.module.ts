@@ -6,7 +6,6 @@ export class GraphModule {
 
     }
     public createGraph(input, graphSelector) {
-        console.log('Inside Graph module');
         var configData = input;
         var fontFamily = "Arial";
 
@@ -53,16 +52,13 @@ export class GraphModule {
         var dataValuesLine = false;
         var data = configData.data;
 
-        console.log("data", data);
 
         for (let i = 0; i < input.length; ++i) {
-            console.log(input[i]);
             if (i === 0) {
                 data = input[i];
             }
         }
 
-        console.log("Inside d3 data", configData);
         // Y2 axis
         var ymaxValues2 = [];
         // UUIDv4 for clips

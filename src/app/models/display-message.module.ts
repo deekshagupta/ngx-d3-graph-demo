@@ -6,6 +6,5 @@ export class DisplayMessageModule {
 
     }
 public displayMessage(type,selector){
-    console.log('hello Ayushi!');
 }
 }
