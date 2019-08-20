@@ -17,6 +17,16 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-d3-graphs": [
+        "dist/ngx-d3-graphs",
+        "dist/ngx-d3-graphs"
+      ],
+      "ngx-d3-graphs/*": [
+        "dist/ngx-d3-graphs/*",
+        "dist/ngx-d3-graphs/*"
+      ]
+    }
   }
 }

@@ -119,6 +119,41 @@
           }
         }
       }
+    },
+    "ngx-d3-graphs": {
+      "projectType": "library",
+      "root": "projects/ngx-d3-graphs",
+      "sourceRoot": "projects/ngx-d3-graphs/src",
+      "prefix": "ndg",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-d3-graphs/tsconfig.lib.json",
+            "project": "projects/ngx-d3-graphs/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-d3-graphs/src/test.ts",
+            "tsConfig": "projects/ngx-d3-graphs/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-d3-graphs/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-d3-graphs/tsconfig.lib.json",
+              "projects/ngx-d3-graphs/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "ngx-d3-graph-demo"
 }

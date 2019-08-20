@@ -1,0 +1,26 @@
+{
+  "name": "ngx-d3-graphs",
+  "version": "0.0.2",
+  "license": "MIT",
+  "author": "Deeksha Gupta",
+  "keywords": [
+    "d3",
+    "graphs",
+    "data visualization",
+    "d3-visualization",
+    "d3js",
+    "graphs",
+    "javascript",
+    "chart",
+    "charts"
+  ],
+  "peerDependencies": {
+    "@angular/common": "^8.0.3",
+    "@angular-devkit/build-ng-packagr": "~0.800.6",
+    "@angular/core": "^8.0.3",
+    "d3": "^4.10.2",
+    "d3-selection-multi": "^1.0.1",
+    "rxjs": "~6.4.0",
+    "moment": "latest"
+  }
+}

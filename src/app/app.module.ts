@@ -7,6 +7,7 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { D3GraphsComponent } from './components/d3-graphs/d3-graphs.component';
 import { D3GraphsService } from './services/d3-graphs.service';
 import {HttpClientModule} from '@angular/common/http';
+import {NgxD3GraphsModule} from "ngx-d3-graphs";
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,8 @@ import {HttpClientModule} from '@angular/common/http';
     BrowserModule,
     NgbModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxD3GraphsModule
   ],
   providers: [D3GraphsService],
   bootstrap: [AppComponent]

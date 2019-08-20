@@ -1,26 +1,24 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Subscription } from 'rxjs';
 import * as d3 from 'd3';
 import 'd3-selection-multi';
-import {Subscription} from 'rxjs';
-import {D3GraphsService} from '../../services/d3-graphs.service';
-import {GraphModule} from '../../models/graph.module';
-import {DisplayMessageModule} from '../../models/display-message.module';
+import { GraphModule } from './graph.module';
+import { NgxD3GraphsService } from '../public-api';
+import { DisplayMessageModule } from './display-message.module';
 
 @Component({
-  selector: 'app-d3-graphs',
-  templateUrl: './d3-graphs.component.html',
-  styleUrls: ['./d3-graphs.component.css']
+  selector: 'ndg-ngx-d3-graphs',
+  template: `
+  <svg id="{{graphType}}" width="100%" height="100%"></svg>
+
+    <p>
+      ngx-d3-graphs works!
+    </p>
+  `,
+  styles: []
 })
-export class D3GraphsComponent implements OnInit {
-  @Input() dataPath: string;
-  @Input()
-  private graphId: string;
-  public get graphType(): string {
-    return this.graphId;
-  }
-  public set graphType(value: string) {
-    this.graphId = value;
-  }
+export class NgxD3GraphsComponent implements OnInit {
+  @Input() graphType: string;
   private subscription: Subscription;
   public data: any;
   public graphSelector: string;
@@ -28,14 +26,14 @@ export class D3GraphsComponent implements OnInit {
   public getGarph: GraphModule = new GraphModule();
   public getMessage: DisplayMessageModule = new DisplayMessageModule();
 
-  constructor(private d3GraphService: D3GraphsService) {
+  constructor(private d3GraphService: NgxD3GraphsService) {
     console.log('Inside D3 Graph Component');
   }
 
   ngOnInit() {
     this.removeSvg = '#' + this.graphType + ' > *';
     this.graphSelector = '#' + this.graphType;
-    this.subscription = this.d3GraphService.getD3Graph(this.dataPath).subscribe((result) => {
+    this.subscription = this.d3GraphService.getD3Graph(this.graphType).subscribe((result) => {
         this.data = result;
         if (this.data != null) {
           this.data = result;

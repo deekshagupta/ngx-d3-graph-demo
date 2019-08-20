@@ -5,7 +5,7 @@ export class D3GraphsService {
 
   constructor(private http: HttpClient) { }
 
-    getD3Graph(graphType) {
-    return this.http.get('./assets/' + graphType + '.json');
+    getD3Graph(path) {
+    return this.http.get(path);
   }
 }
