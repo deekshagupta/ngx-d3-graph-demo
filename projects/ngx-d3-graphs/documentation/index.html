@@ -1,0 +1,158 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ngx-d3-graphs documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	      <link rel="stylesheet" href="./styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">ngx-d3-graphs documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1 id="ngxd3graphs">NgxD3Graphs</h1>
+<p>Interactive and highly customizable D3 charts for designers &amp; developers.</br>
+This is a project for creating D3 graphs using  <a href="https://github.com/angular/angular-cli">Angular CLI</a> version 8.0.3 and <a href="https://d3js.org/">D3.js</a> Library.</p>
+<ul>
+<li>Sample application is hosted at - <a href="https://suspicious-knuth-a7d7e0.netlify.com">NgxD3Graphs</a><h2 id="install">Install</h2>
+npm i ngx-d3-graphs<h2 id="why-ngx-d3-graphs">Why ngx-d3-graphs</h2>
+Unlike other D3 angular chart wrapper libraries, NgxD3Graphs is designed to be very interactive, responsive and dynamic data visualization library 
+with the following features-
+####Supported Graphs-</li>
+<li><p>Line graph</p></br></li>
+<li><p>Bar graph</p></br></li>
+<li><p>Scatter plot graph</p></br></li>
+<li><p> Combination of line, bar and scatter plot graph. </p></br>
+####Features</li>
+<li><p>Multiple instances of D3 Graph is supported. </p></br></li>
+<li><p>X-axis is a timeline and Y-axis is number by default. </p></br></li>
+<li><p>Graph type, color, font size, legend and axis text is configurable.</p></br></li>
+<li><p>Left and right y-axis </p></br></li>
+<li><p>Tooltip  </p></br>     </li>
+<li><p>Zoom </p></br></li>
+<li><p>Combination of line/bar/scatter plot graph can be drawn with different y-axis </p></br></li>
+<li><p>Graphs are responsive and suitable for web and mobile applications </p></br>
+
+</li>
+</ul>
+<p>##Future Enhancements-</p>
+<ul>
+<li><p>Support for including more graphs like stacked area, donut, pie charts. </p></br></li>
+<li><p>Support for Simpl framework </p></br></li>
+<li><p>Performance improvement for high volume of input data </p></br></li>
+<li><p>Multiple Y-Axis </p></br>
+
+</li>
+</ul>
+<h2 id="documentation">Documentation</h2>
+<p>Ngxd3Graphs can be used by importing </p>
+<ul>
+<li><p><code>import {NgxD3GraphsModule} from &quot;ngx-d3-graphs&quot; in the &#39;app.module.ts&#39;</code></p>
+<p><code>&quot;NgxD3GraphsModule&quot; module should be imported.</code></p>
+</li>
+<li><p>Add the following selector in your app component html.</p>
+<p><code>&lt;app-d3-graphs [graphId]=id2 [jsonInput]=&quot;jsonInput&quot;&gt;&lt;/app-d3-graphs&gt;</code> 
+where-</p>
+</li>
+<li><p>graphId- unique string</p>
+</li>
+<li><p>jsonInput- provides json input to ngxd3graphs component 
+e.g.,</p>
+<p><code>id: string= &#39;graph1&#39;;</code> </p>
+</li>
+</ul>
+<p>json input should be given in the following format-</p>
+<p><code>jsonInput = {&quot;config&quot;:{&quot;cmd&quot;:&quot;none&quot;,&quot;typeProperties&quot;:{&quot;axisColor&quot;:&quot;black&quot;,&quot;axisTextColor&quot;:&quot;black&quot;,&quot;xAxisTicks&quot;:3,&quot;yAxisTicks&quot;:[5,3],&quot;xAxisText&quot;:&quot;Timeline&quot;,&quot;yAxisText&quot;:[&quot;Speed&quot;,&quot;Time&quot;],&quot;decimalDigits&quot;:2,&quot;xUnit&quot;:&quot;hr&quot;,&quot;yUnit&quot;:[&quot;km/hr&quot;,&quot;Hr&quot;],&quot;axisCss&quot;:{&quot;shape-rendering&quot;:&quot;crispEdges&quot;,&quot;stroke-width&quot;:&quot;1.7px&quot;},&quot;timeFormat&quot;:&quot;HH:mm&quot;},&quot;advanced&quot;:{&quot;tooltips&quot;:true,&quot;legends&quot;:true,&quot;zoom&quot;:true,&quot;zoomMinScaleExtent&quot;:1,&quot;zoomMaxScaleExtent&quot;:4}},&quot;data&quot;:[{&quot;dataConfig&quot;:{&quot;name&quot;:&quot;Free&quot;,&quot;legends&quot;:&quot;L1BY0&quot;,&quot;type&quot;:&quot;dot&quot;,&quot;yIndicator&quot;:&quot;y1&quot;,&quot;color&quot;:&quot;orange&quot;,&quot;isYNegativeAllowed&quot;:false,&quot;css&quot;:{&quot;opacity&quot;:&quot;0.85&quot;,&quot;r&quot;:&quot;5&quot;}},&quot;values&quot;:[{&quot;xAxis&quot;:1521074700000,&quot;yAxis&quot;:60.1267},{&quot;xAxis&quot;:1521075600000,&quot;yAxis&quot;:105.4523},{&quot;xAxis&quot;:1521076500000,&quot;yAxis&quot;:99},{&quot;xAxis&quot;:1521077400000,&quot;yAxis&quot;:120},{&quot;xAxis&quot;:1521078300000,&quot;yAxis&quot;:40},{&quot;xAxis&quot;:1521079200000,&quot;yAxis&quot;:86}]},{&quot;dataConfig&quot;:{&quot;name&quot;:&quot;Free&quot;,&quot;legends&quot;:&quot;L2BY1&quot;,&quot;type&quot;:&quot;bar&quot;,&quot;yIndicator&quot;:&quot;y1&quot;,&quot;isYNegativeAllowed&quot;:false,&quot;color&quot;:&quot;blue&quot;,&quot;css&quot;:{&quot;fill-opacity&quot;:&quot;0.65&quot;}},&quot;values&quot;:[{&quot;xAxis&quot;:1521074700000,&quot;yAxis&quot;:10},{&quot;xAxis&quot;:1521075600000,&quot;yAxis&quot;:8},{&quot;xAxis&quot;:1521076500000,&quot;yAxis&quot;:3},{&quot;xAxis&quot;:1521077400000,&quot;yAxis&quot;:4},{&quot;xAxis&quot;:1521078300000,&quot;yAxis&quot;:5},{&quot;xAxis&quot;:1521079200000,&quot;yAxis&quot;:6}]},{&quot;dataConfig&quot;:{&quot;name&quot;:&quot;Free&quot;,&quot;legends&quot;:&quot;L3LY0&quot;,&quot;type&quot;:&quot;line&quot;,&quot;yIndicator&quot;:&quot;y0&quot;,&quot;color&quot;:&quot;red&quot;,&quot;isYNegativeAllowed&quot;:false,&quot;css&quot;:{}},&quot;values&quot;:[{&quot;xAxis&quot;:1521074700000,&quot;yAxis&quot;:80.1267},{&quot;xAxis&quot;:1521075600000,&quot;yAxis&quot;:35.4523},{&quot;xAxis&quot;:1521076500000,&quot;yAxis&quot;:31},{&quot;xAxis&quot;:1521077400000,&quot;yAxis&quot;:20},{&quot;xAxis&quot;:1521078300000,&quot;yAxis&quot;:120},{&quot;xAxis&quot;:1521079200000,&quot;yAxis&quot;:186}]},{&quot;dataConfig&quot;:{&quot;name&quot;:&quot;Free&quot;,&quot;legends&quot;:&quot;L4LY1&quot;,&quot;type&quot;:&quot;bar&quot;,&quot;yIndicator&quot;:&quot;y1&quot;,&quot;color&quot;:&quot;rgb(32, 158, 145)&quot;,&quot;isYNegativeAllowed&quot;:false,&quot;css&quot;:{&quot;fill-opacity&quot;:&quot;0.65&quot;}},&quot;values&quot;:[{&quot;xAxis&quot;:1521074700000,&quot;yAxis&quot;:30.5},{&quot;xAxis&quot;:1521075600000,&quot;yAxis&quot;:92},{&quot;xAxis&quot;:1521076500000,&quot;yAxis&quot;:53},{&quot;xAxis&quot;:1521077400000,&quot;yAxis&quot;:74},{&quot;xAxis&quot;:1521078300000,&quot;yAxis&quot;:25.56},{&quot;xAxis&quot;:1521079200000,&quot;yAxis&quot;:26}]}]}</code></p>
+<p> where &quot;type&quot; defines the type of the graph you want to draw for instance bar,dot or line graphs.</p>
+<h2 id="contributing">Contributing</h2>
+<h4 id="coming-soon">Coming Soon</h4>
+<h2 id="license">License</h2>
+<p>NgxD3Graphs is available under the <a href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="./js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="./js/menu-wc.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,887 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ngx-d3-graphs documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ngx-d3-graphs documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Classes</li>
+  <li>GraphModule</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/lib/graph.module.ts</code>
+        </p>
+
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#createGraph">createGraph</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                                <span class="modifier">Public</span>
+                        <code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="5" class="link-to-prism">src/lib/graph.module.ts:5</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createGraph"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            createGraph
+                        </b>
+                        <a href="#createGraph"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createGraph(input, graphSelector)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="9"
+                            class="link-to-prism">src/lib/graph.module.ts:9</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>input</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>graphSelector</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import * as d3 from &#x27;d3&#x27;;
+import &#x27;d3-selection-multi&#x27;;
+import * as moment_ from &#x27;moment&#x27;;
+const moment &#x3D; moment_;
+export class GraphModule {
+  public constructor() {
+
+  }
+  public createGraph(input, graphSelector) {
+    var configData &#x3D; input;
+    var fontFamily &#x3D; &quot;Arial&quot;;
+
+    var xAxisFontSize &#x3D; 10,
+      yAxisFontSize &#x3D; 10,
+      legendFontSize &#x3D; 10,
+      fontSize &#x3D; 10;
+
+    if ((fontSize &lt;&#x3D; 8) || (fontSize &gt;&#x3D; 13)) {
+      fontSize &#x3D; 12;
+    }
+    if (((xAxisFontSize &lt;&#x3D; 8) || (xAxisFontSize &gt;&#x3D; 15))) {
+
+      xAxisFontSize &#x3D; 14;
+    }
+    if (((yAxisFontSize &lt;&#x3D; 8) || (yAxisFontSize &gt;&#x3D; 15))) {
+
+      yAxisFontSize &#x3D; 14;
+
+    }
+    if (((legendFontSize &lt;&#x3D; 8) || (legendFontSize &gt;&#x3D; 15))) {
+
+      legendFontSize &#x3D; 14;
+    }
+
+    const svg &#x3D; d3.select(graphSelector),
+      margin &#x3D; { top: 20, right: 20, bottom: 30, left: 50 },
+      width &#x3D; +svg.property(&#x27;width&#x27;).baseVal.value - margin.left - margin.right,
+      height &#x3D; +svg.property(&#x27;height&#x27;).baseVal.value - margin.top - margin.bottom;
+    svg.attr(&#x27;viewBox&#x27;, &#x27;0 0 &#x27; + (svg.property(&#x27;width&#x27;).baseVal.value) + &#x27; &#x27; + (svg.property(&#x27;height&#x27;).baseVal.value));
+    svg.attr(&#x27;preserveAspectRatio&#x27;, &#x27;none&#x27;);
+
+    var duration &#x3D; 250;
+    var circleOpacity &#x3D; &#x27;0.85&#x27;;
+    var circleRadius &#x3D; 3;
+    var circleRadiusHover &#x3D; 6;
+    var barWidth &#x3D; 20;
+    var ymaxValues &#x3D; [];
+    var xdomainMax &#x3D; [];
+    var xdomainMin &#x3D; [];
+    var dataElement;
+    var dataValuesBarCount &#x3D; 0;
+    var dataValuesDot &#x3D; false;
+    var dataValuesLine &#x3D; false;
+    var data &#x3D; configData.data;
+
+
+    for (let i &#x3D; 0; i &lt; input.length; ++i) {
+      if (i &#x3D;&#x3D;&#x3D; 0) {
+        data &#x3D; input[i];
+      }
+    }
+
+    // Y2 axis
+    var ymaxValues2 &#x3D; [];
+    // UUIDv4 for clips
+    var barClip &#x3D; uniqueIds(&quot;clip-bar&quot;);
+    var pathClip &#x3D; uniqueIds(&quot;clip-path&quot;);
+    var circleClip &#x3D; uniqueIds(&quot;clip-circle&quot;);
+    var language &#x3D; &#x27;en&#x27;;
+    var country &#x3D; &#x27;&#x27;;
+    var locale &#x3D; language || country;
+    const formatTime &#x3D; function (d) {
+      moment.locale(locale);
+      return moment(d).format(configData.config.typeProperties.timeFormat);
+    };
+
+
+    var yAxisGrp &#x3D; [];
+    for (let i &#x3D; 0; i &lt; data.length; ++i) {
+      if (data[i].dataConfig.type &#x3D;&#x3D; &#x27;dot&#x27;) {
+        for (let j &#x3D; 0; j &lt; data[i].values.length; ++j) {
+          data[i].values[j].r &#x3D; Number(data[i].dataConfig.css.r) &gt; 1 &amp;&amp; Number(data[i].dataConfig.css.r) &lt; 6 ? data[i].dataConfig.css.r : circleRadius;
+        }
+      }
+    }
+    data.forEach(function (d, i) {
+
+      if (!yAxisGrp.find((item) &#x3D;&gt; {
+        return d.dataConfig.yIndicator &#x3D;&#x3D;&#x3D; item
+      })) {
+        yAxisGrp.push(d.dataConfig.yIndicator);
+      }
+      if (d.dataConfig.yIndicator &#x3D;&#x3D; &#x27;y0&#x27;) {
+
+        ymaxValues.push(Number(d3.max(d.values, function (d) {
+          return Number(d.yAxis);
+        })));
+      } else {
+        ymaxValues2.push(Number(d3.max(d.values, function (d) {
+          return Number(d.yAxis);
+        })));
+      }
+      xdomainMax.push(d3.max(d.values, function (d) {
+        return d.xAxis;
+      }));
+      xdomainMin.push(d3.min(d.values, function (d) {
+        return d.xAxis;
+      }));
+      if (d.dataConfig.type &#x3D;&#x3D; &#x27;line&#x27; &amp;&amp; !dataValuesLine) {
+        dataValuesLine &#x3D; true;
+      }
+      if (d.dataConfig.type &#x3D;&#x3D; &#x27;bar&#x27;) {
+        dataValuesBarCount++;
+      }
+      if (d.dataConfig.type &#x3D;&#x3D; &#x27;dot&#x27; &amp;&amp; !dataValuesDot) {
+        d.values, function (d, i) {
+          d.values[i].r &#x3D; 4;
+        }
+        dataValuesDot &#x3D; true;
+      }
+    });
+
+    /* Scale */
+    var xScale &#x3D; d3.scaleTime()
+      .domain([d3.min(xdomainMin), d3.max(xdomainMax)])
+      .rangeRound([0, width]);
+
+    var origScale &#x3D; d3.scaleTime()
+      .domain([d3.min(xdomainMin), d3.max(xdomainMax)])
+      .rangeRound([0, width]);
+
+    const focus &#x3D; svg.append(&quot;g&quot;).attr(&quot;class&quot;, &quot;focus&quot;)
+      .attr(&quot;transform&quot;, &quot;translate(&quot; + margin.left + &quot;,&quot; + margin.top + &quot;)&quot;);
+
+    /* Add Axis into SVG */
+    var xAxis &#x3D; d3.axisBottom(xScale).ticks(3).tickFormat(formatTime);
+
+
+    const xtext &#x3D; focus.append(&quot;g&quot;)
+      .attr(&quot;class&quot;, &quot;axis axis--x&quot;)
+      .attr(&#x27;transform&#x27;, &#x27;translate(0,&#x27; + height + &#x27;)&#x27;)
+      .call(xAxis);
+
+    const xaxistext &#x3D; focus.append(&quot;text&quot;)
+      .attr(&quot;transform&quot;, &quot;translate(&quot; + (width / 2) + &quot; ,&quot; + (height + margin.bottom) + &quot;)&quot;)
+      .attr(&quot;class&quot;, &quot;axisText&quot;)
+      .attr(&quot;font-size&quot;, xAxisFontSize)
+      .text(configData.config.typeProperties.xAxisText);
+
+    xaxistext.attr(&quot;x&quot;, -(xtext._groups[0][0].getBBox().height + xaxistext._groups[0][0].getBBox().width) / 2);
+
+
+    // Y Axis Settings
+    var yScaleMap &#x3D; new Object();
+
+    var yScale &#x3D; d3.scaleLinear()
+      .domain([0, d3.max(ymaxValues) * 1.2])
+      .rangeRound([height, 0]);
+
+    var yAxis &#x3D; d3.axisLeft(yScale).ticks(configData.config.typeProperties.yAxisTicks[0]);
+    const ytext &#x3D; focus.append(&quot;g&quot;)
+      .attr(&quot;class&quot;, &quot;axis axis--y&quot;)
+      .call(yAxis);
+
+    let yaxistext &#x3D; focus.append(&#x27;text&#x27;)
+      .attr(&#x27;transform&#x27;, &#x27;rotate(-90)&#x27;)
+      .attr(&#x27;y&#x27;, -35)
+      .attr(&#x27;dx&#x27;, &#x27;0.75em&#x27;)
+      .attr(&quot;class&quot;, &quot;axisText&quot;)
+      .attr(&quot;font-size&quot;, yAxisFontSize)
+      .text(configData.config.typeProperties.yAxisText[0]);
+
+    yaxistext.attr(&quot;x&quot;, -(ytext._groups[0][0].getBBox().height + yaxistext._groups[0][0].getBBox().width) / 2);
+    //   d3.select(graphSelector).find(&quot;.axis--y text&quot;).css(&quot;font-size&quot;, yAxisFontSize);
+    yScaleMap[&#x27;y0&#x27;] &#x3D; yScale;
+    if (yAxisGrp.length &gt; 1) {
+      var yScale2 &#x3D; d3.scaleLinear()
+        .domain([0, d3.max(ymaxValues2) * 1.2])
+        .rangeRound([height, 0]);
+      var yAxis2 &#x3D; d3.axisRight(yScale2).ticks(configData.config.typeProperties.yAxisTicks[1]);
+      const ytext2 &#x3D; focus.append(&quot;g&quot;)
+        .attr(&quot;class&quot;, &quot;axis axis--y&quot;)
+        .attr(&quot;transform&quot;, &quot;translate( &quot; + width + &quot;, 0 )&quot;)
+        .call(yAxis2);
+
+      let yaxistext2 &#x3D; focus.append(&#x27;text&#x27;)
+        .attr(&#x27;transform&#x27;, &#x27;rotate(-90)&#x27;)
+        .attr(&#x27;y&#x27;, width + 30)
+        .attr(&#x27;dx&#x27;, &#x27;0.75em&#x27;)
+        .attr(&quot;class&quot;, &quot;axisText&quot;)
+        .attr(&quot;font-size&quot;, yAxisFontSize)
+        .text(configData.config.typeProperties.yAxisText[1]);
+
+      yaxistext2.attr(&quot;x&quot;, -(ytext2._groups[0][0].getBBox().height + yaxistext._groups[0][0].getBBox().width) / 2);
+      //  d3.select(graphSelector).find(&quot;.axis--y text&quot;).css(&quot;font-size&quot;, yAxisFontSize);
+      yScaleMap[&#x27;y1&#x27;] &#x3D; yScale2;
+    }
+    // Y dynamic settings
+
+    // d3.select(graphSelector).find(&quot;.axis line, .axis path&quot;).css(&quot;stroke&quot;, &#x60;${configData.config.typeProperties.axisColor}&#x60;);
+    // d3.select(graphSelector).find(&quot;.axis--x text, .axis--y text&quot;).css(&quot;fill&quot;, configData.config.typeProperties.axisColor);
+    // d3.select(graphSelector).find(&quot;.axisText&quot;).css(&quot;fill&quot;, configData.config.typeProperties.axisTextColor);
+    // d3.select(graphSelector).find(&quot;.axis--x text, .axis--y text&quot;).css(configData.config.typeProperties.axisCss);
+    // d3.select(graphSelector).find(&quot;.axis--x text, .axis--y text&quot;).css(&quot;font-family&quot;, fontFamily);
+    // d3.select(graphSelector).find(&quot;.axis--x text&quot;).css(&quot;font-size&quot;, xAxisFontSize);
+
+    dataElement &#x3D; focus.selectAll(&#x27;.dataElement&#x27;)
+      .data(data)
+      .enter()
+      .append(&#x27;g&#x27;)
+      .attr(&#x27;class&#x27;, &#x27;dataElement&#x27;);
+
+    var newMinValue &#x3D; xScale.invert(xScale(d3.min(xdomainMin)) - (dataValuesBarCount * barWidth / 2) * 1.2);
+    var newMaxValue &#x3D; xScale.invert(xScale(d3.max(xdomainMax)) + (dataValuesBarCount * barWidth / 2) * 1.2);
+
+    xScale.domain([newMinValue, newMaxValue]);
+    origScale.domain([newMinValue, newMaxValue]);
+
+    if (dataValuesLine) {
+      // Add line into SVG
+      var lineY0 &#x3D; d3.line()
+        .curve(d3.curveMonotoneX)
+        .x(d &#x3D;&gt; xScale(d.xAxis))
+        .y(d &#x3D;&gt; yScale(d.yAxis));
+
+      var lineY1 &#x3D; d3.line()
+        .curve(d3.curveMonotoneX)
+        .x(d &#x3D;&gt; xScale(d.xAxis))
+        .y(d &#x3D;&gt; yScale2(d.yAxis));
+
+      dataElement.append(&#x27;path&#x27;)
+        .attr(&#x27;fill&#x27;, &#x27;none&#x27;)
+        .attr(&quot;class&quot;, &quot;line&quot;)
+        .attr(&quot;shape-rendering&quot;, &quot;auto&quot;)
+        .style(&quot;stroke&quot;, function (d) {
+          return d.dataConfig.color;
+        })
+        .style(&quot;clip-path&quot;, &#x60;url(#${pathClip})&#x60;)
+        .attr(&#x27;d&#x27;, function (d) {
+          if (d.dataConfig.type &#x3D;&#x3D; &#x27;line&#x27;) {
+            if (d.dataConfig.yIndicator &#x3D;&#x3D; &#x27;y0&#x27;)
+              return lineY0(d.values);
+            else
+              return lineY1(d.values);
+          } else {
+            d3.select(this).remove(&#x27;path&#x27;);
+            return;
+          }
+        })
+        .attrs(function (d) {
+          return d.dataConfig.css;
+        });
+      // Adding a tooltip
+      if (configData.config.advanced.tooltips &amp;&amp; dataElement) {
+        yAxisGrp.forEach(function (d, i) {
+          createTooltip(dataElement, yAxisGrp[i], i);
+        });
+      }
+
+    }
+    if (dataValuesDot) {
+      yAxisGrp.forEach(function (d, i) {
+        drawScatterPlot(yAxisGrp[i], i);
+      });
+      // Add a tooltip
+      if (configData.config.advanced.tooltips &amp;&amp; dataElement) {
+        yAxisGrp.forEach(function (d, i) {
+          createTooltip(dataElement, yAxisGrp[i], i);
+        });
+
+      }
+    }
+    var count &#x3D; 0;
+    if (dataValuesBarCount !&#x3D; 0) {
+      focus.select(&quot;.axis--x&quot;).call(d3.axisBottom(xScale).ticks(configData.config.typeProperties.xAxisTicks).tickFormat(formatTime));
+
+      yAxisGrp.forEach(function (d, i) {
+        drawBar(yAxisGrp[i], i);
+      });
+
+      //  Adding a tooltip
+      if (configData.config.advanced.tooltips &amp;&amp; dataElement) {
+        yAxisGrp.forEach(function (d, i) {
+          createTooltip(dataElement, yAxisGrp[i], i);
+        });
+
+      }
+
+
+    }
+
+    // zoom function
+    if (configData.config.advanced.zoom &amp;&amp; dataElement) {
+      enableZoom(svg);
+    }
+
+    function drawScatterPlot(yAxisInd, index) {
+      var yScale &#x3D; yScaleMap[yAxisInd];
+      dataElement.append(&quot;g&quot;)
+        .style(&quot;fill&quot;, d &#x3D;&gt; d.dataConfig.color)
+        .attrs(function (d) {
+          return d.dataConfig.css;
+        })
+        .attr(&quot;class&quot;, &quot;circle-group&quot;)
+        .selectAll(&quot;circle&quot;)
+        .data(function (d) {
+          if (d.dataConfig.type &#x3D;&#x3D; &#x27;dot&#x27;) {
+            if (d.dataConfig.yIndicator &#x3D;&#x3D; yAxisInd)
+              return d.values;
+            else
+              return [];
+          } else {
+            d3.select(this.__element).remove(&#x27;g&#x27;);
+            return [];
+          }
+        }).enter()
+        .append(&quot;g&quot;)
+        .append(&quot;circle&quot;)
+        .attr(&quot;class&quot;, &quot;circle-element&quot;)
+        .attr(&quot;id&quot;, &quot;circle&quot; + yAxisInd)
+        .attr(&quot;cx&quot;, d &#x3D;&gt; xScale(d.xAxis))
+        .attr(&quot;cy&quot;, d &#x3D;&gt; yScale(d.yAxis))
+        .attr(&quot;r&quot;, d &#x3D;&gt; d.r)
+        .style(&quot;clip-path&quot;, &#x60;url(#${circleClip})&#x60;)
+    }
+
+    function drawBar(yAxisInd, index) {
+      var yScale &#x3D; yScaleMap[yAxisInd];
+      dataElement.append(&quot;g&quot;)
+        .style(&quot;fill&quot;, function (d) {
+          return d.dataConfig.color;
+        })
+        .attrs(function (d) {
+          return d.dataConfig.css;
+        })
+        .attr(&quot;class&quot;, &quot;bar-group&quot;)
+        .selectAll(&quot;.bar&quot;)
+        .data(function (d) {
+          if (d.dataConfig.type &#x3D;&#x3D; &#x27;bar&#x27; &amp;&amp; d.dataConfig.yIndicator &#x3D;&#x3D; yAxisInd) {
+            d3.select(this).attr(&quot;transform&quot;, &quot;translate(&quot; + -(dataValuesBarCount - count++ * 2) * (barWidth / 2) + &quot;,0)&quot;);
+            return d.values;
+          } else {
+            d3.select(this).remove(&#x27;g&#x27;);
+            return [];
+          }
+        })
+        .enter()
+        .append(&quot;rect&quot;)
+        .attr(&quot;class&quot;, &quot;bar&quot;)
+        .attr(&quot;id&quot;, &quot;bary&quot; + index)
+        .style(&quot;clip-path&quot;, &#x60;url(#${barClip})&#x60;)
+        .attr(&quot;x&quot;, function (d) {
+          return xScale(d.xAxis);
+        })
+        .attr(&quot;y&quot;, function (d) {
+          return yScale(d.yAxis);
+        })
+        .attr(&quot;width&quot;, barWidth)
+        .attr(&quot;height&quot;, function (d) {
+          return yScale(0) - yScale(d.yAxis);
+        });
+
+    }
+
+    /**
+     * method to enable zoom
+     */
+    function enableZoom(svg) {
+      var zoomed &#x3D; function () {
+        var t &#x3D; d3.event.transform;
+        xScale.domain(t.rescaleX(origScale).domain());
+        dataElement.selectAll(&quot;.line&quot;).attr(&quot;d&quot;, function (d) {
+          if (d.dataConfig.yIndicator &#x3D;&#x3D; &#x27;y0&#x27;)
+            return lineY0(d.values);
+          else
+            return lineY1(d.values);
+
+        });
+        focus.select(&quot;.axis--x&quot;).call(xAxis);
+        if (configData.config.advanced.tooltips) {
+          yAxisGrp.forEach(function (d, i) {
+            var yScale &#x3D; yScaleMap[yAxisGrp[i]];
+            focus.selectAll(&#x27;[id&#x3D;&quot;circle&#x27; + yAxisGrp[i] + &#x27;&quot;]&#x27;)
+              .attr(&quot;cx&quot;, d &#x3D;&gt; xScale(d.xAxis))
+              .attr(&quot;cy&quot;, function (d) {
+                return yScale(d.yAxis);
+              });
+          });
+        }
+
+        dataElement.selectAll(&quot;.bar&quot;)
+          .attr(&quot;x&quot;, function (d) {
+            return xScale(d.xAxis);
+          });
+        focus.select(&quot;.axis--x&quot;).call(xAxis);
+
+        d3.select(graphSelector).find(&quot;.axis line&quot;).css(&quot;stroke&quot;, &#x60;${configData.config.typeProperties.axisColor}&#x60;);
+        d3.select(graphSelector).find(&quot;.axis--x text&quot;).css(&quot;fill&quot;, configData.config.typeProperties.axisColor);
+        d3.select(graphSelector).find(&quot;.axis--x text&quot;).css(configData.config.typeProperties.axisCss);
+      }
+      var zoom &#x3D; d3.zoom()
+        .scaleExtent([configData.config.advanced.zoomMinScaleExtent, configData.config.advanced.zoomMaxScaleExtent])
+        .translateExtent([
+          [0, 0],
+          [width, height]
+        ])
+        .extent([
+          [0, 0],
+          [width, height]
+        ])
+        .on(&quot;zoom&quot;, zoomed);
+
+      svg.select(&#x27;.focus&#x27;)
+        .insert(&quot;rect&quot;, &quot;:first-child&quot;)
+        .attr(&quot;class&quot;, &quot;zoom&quot;)
+        .attr(&quot;fill&quot;, &quot;none&quot;)
+        .attr(&quot;pointer-events&quot;, &quot;all&quot;)
+        .attr(&quot;width&quot;, width)
+        .attr(&quot;height&quot;, height)
+        .call(zoom);
+
+      svg.selectAll(&#x27;clipPath&#x27;).remove();
+
+      svg.append(&quot;defs&quot;)
+        .append(&quot;clipPath&quot;)
+        .attr(&quot;id&quot;, pathClip)
+        .append(&quot;rect&quot;)
+        .attr(&quot;width&quot;, width)
+        .attr(&quot;height&quot;, height);
+
+      svg.append(&quot;defs&quot;)
+        .append(&quot;clipPath&quot;)
+        .attr(&quot;id&quot;, barClip)
+        .append(&quot;rect&quot;)
+        .attr(&quot;width&quot;, width - ((dataValuesBarCount) * barWidth / 2) - ((dataValuesBarCount - 2) * barWidth / 2))
+        .attr(&quot;transform&quot;, &quot;translate(&quot; + (dataValuesBarCount * barWidth / 2) + &quot;,0)&quot;)
+        .attr(&quot;height&quot;, height);
+
+      svg.append(&quot;defs&quot;)
+        .append(&quot;clipPath&quot;)
+        .attr(&quot;id&quot;, circleClip)
+        .append(&quot;rect&quot;)
+        .attr(&quot;width&quot;, width + 2 * circleRadiusHover)
+        .attr(&quot;transform&quot;, &quot;translate(-&quot; + circleRadiusHover + &quot;,0)&quot;)
+        .attr(&quot;height&quot;, height);
+    }
+
+    /*Adding legends */
+    if (configData.config.advanced.legends &amp;&amp; dataElement) {
+      addLegends();
+
+    }
+
+    /**
+     * method to add legends
+     */
+    function addLegends() {
+      let dataLength &#x3D; 0;
+      const offset &#x3D; 30;
+
+      dataElement.append(&quot;g&quot;)
+        .attr(&quot;class&quot;, &quot;legend&quot;)
+        .each(function (d, i) {
+          const g &#x3D; d3.select(this);
+          const parameter &#x3D; 10;
+          g.append(&#x27;rect&#x27;)
+            .attr(&#x27;class&#x27;, &#x27;legendRect&#x27;)
+            .attr(&#x27;x&#x27;, dataLength)
+            .attr(&#x27;width&#x27;, parameter)
+            .attr(&#x27;height&#x27;, parameter)
+            .attr(&#x27;y&#x27;, 5)
+            .style(&#x27;fill&#x27;, function (d) {
+              return d.dataConfig.color;
+            });
+          let text &#x3D; g.append(&#x27;text&#x27;)
+            .attr(&#x27;class&#x27;, &#x27;legendText&#x27;)
+            .attr(&#x27;x&#x27;, dataLength + 15)
+            .attr(&#x27;y&#x27;, 15)
+            .attr(&quot;font-family&quot;, fontFamily)
+            .attr(&quot;font-size&quot;, legendFontSize)
+            .text(function (d) {
+              return d.dataConfig.legends;
+            });
+          dataLength +&#x3D; text._groups[0][0].getBBox().width + offset;
+        });
+
+      dataElement.select(&quot;.legend&quot;).attr(&#x27;transform&#x27;, &#x27;translate(&#x27; + (width + margin.right - dataLength - 5) + &#x27;, -25)&#x27;);
+    }
+
+    /**
+     * method to create tooltip
+     */
+    function createTooltip(dataElement, yAxisInd, index) {
+      var yScale &#x3D; yScaleMap[yAxisInd];
+
+      function getMouseOverValues(d) {
+        var tooltip &#x3D; d3.select(this)
+          .style(&quot;cursor&quot;, &quot;pointer&quot;)
+          .append(&quot;text&quot;)
+          .attr(&quot;class&quot;, &quot;text&quot;)
+          .text(&#x60;${+d.yAxis.toFixed(configData.config.typeProperties.decimalDigits)}&#x60; + &#x27; &#x27; + configData.config.typeProperties.yUnit[yAxisInd.includes(&#x27;0&#x27;) ? 0 : 1])
+          .attr(&quot;x&quot;, d &#x3D;&gt; xScale(d.xAxis) + 5)
+          .attr(&quot;y&quot;, d &#x3D;&gt; yScale(d.yAxis) - 10);
+
+        var position &#x3D; d3.mouse(this);
+        if (position[0] &lt; (width / 2)) {
+          tooltip.style(&quot;text-anchor&quot;, &quot;start&quot;);
+        } else {
+          tooltip.style(&quot;text-anchor&quot;, &quot;end&quot;);
+        }
+      }
+
+      function getMouseOutValues() {
+        d3.select(this)
+          .style(&quot;cursor&quot;, &quot;none&quot;)
+          .transition()
+          .duration(duration)
+          .selectAll(&quot;.text&quot;).remove();
+      }
+
+      dataElement.append(&quot;g&quot;)
+        .style(&quot;fill&quot;, d &#x3D;&gt; d.dataConfig.color)
+        .attr(&quot;class&quot;, &quot;circle-group&quot;)
+        .selectAll(&quot;circle&quot;)
+        .data(function (d) {
+          if (d.dataConfig.type &#x3D;&#x3D; &#x27;line&#x27;) {
+            if (d.dataConfig.yIndicator &#x3D;&#x3D; yAxisInd)
+              return d.values;
+            else
+              return [];
+          } else {
+            d3.select(this.__element)
+              .remove(&#x27;g&#x27;);
+            return [];
+          }
+        }).enter()
+        .append(&quot;g&quot;)
+        .attr(&quot;class&quot;, &quot;circle&quot;)
+        .on(&quot;mouseover&quot;, function (d) {
+          getMouseOverValues.call(this, d);
+        })
+        .on(&quot;mouseout&quot;, function (d) {
+          getMouseOutValues.call(this);
+        })
+        .append(&quot;circle&quot;)
+        .attr(&quot;class&quot;, &quot;circle-element&quot;)
+        .attr(&quot;id&quot;, &quot;circle&quot; + yAxisInd)
+        .attr(&quot;cx&quot;, d &#x3D;&gt; xScale(d.xAxis))
+        .attr(&quot;cy&quot;, d &#x3D;&gt; yScale(d.yAxis))
+        .attr(&quot;r&quot;, circleRadius)
+        .style(&quot;clip-path&quot;, &#x60;url(#${circleClip})&#x60;)
+        .style(&#x27;opacity&#x27;, circleOpacity)
+        .on(&quot;mouseover&quot;, function (d) {
+          d3.select(this)
+            .transition()
+            .duration(duration)
+            .attr(&quot;r&quot;, circleRadiusHover);
+        })
+        .on(&quot;mouseout&quot;, function (d) {
+          d3.select(this)
+            .transition()
+            .duration(duration)
+            .attr(&quot;r&quot;, circleRadius);
+        });
+
+      dataElement.selectAll(&quot;circle&quot;)
+        .data(function (d) {
+          if (d.dataConfig.type &#x3D;&#x3D; &#x27;dot&#x27;) {
+            if (d.dataConfig.yIndicator &#x3D;&#x3D; yAxisInd)
+              return d.values;
+            else
+              return [];
+          }
+          else {
+            d3.select(this.__element)
+              .remove(&#x27;g&#x27;);
+            return [];
+          }
+
+        })
+        .on(&quot;mouseover&quot;, function (d) {
+          getMouseOverValues.call(this.parentNode, d);
+        })
+        .on(&quot;mouseout&quot;, function (d) {
+          getMouseOutValues.call(this.parentNode);
+        });
+
+      dataElement.selectAll(&#x27;[id&#x3D;&quot;bary&#x27; + index + &#x27;&quot;]&#x27;)
+        .on(&quot;mouseover&quot;, function (d) {
+
+          var tooltip &#x3D; d3
+            .select(this.parentNode)
+            .insert(&quot;text&quot;, &quot;:first-child&quot;)
+            .style(&quot;cursor&quot;, &quot;pointer&quot;)
+            .attr(&quot;class&quot;, &quot;text&quot;)
+            .text(&#x60;${d.yAxis.toFixed(configData.config.typeProperties.decimalDigits)}&#x60; + &#x27; &#x27; + configData.config.typeProperties.yUnit[yAxisInd.includes(&#x27;0&#x27;) ? 0 : 1])
+            .style(&quot;text-anchor&quot;, &quot;start&quot;);
+          tooltip.attr(&#x27;transform&#x27;, &#x60;translate(${xScale(d.xAxis) + barWidth / 2}, ${yScale(d.yAxis) - 5}) rotate(270)&#x60;);
+        })
+        .on(&quot;mouseout&quot;, function (d) {
+          getMouseOutValues.call(this.parentNode);
+        });
+
+
+    }
+
+    function uniqueIds(id) {
+      return id + &quot;-&quot; + Math.floor((Math.random() * 10000) + 1);;
+    }
+
+
+
+  }
+
+}
+
+</code></pre>
+    </div>
+</div>
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'GraphModule.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
