@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "compodoc": "npx compodoc -p tsconfig.app.json"
   },
   "private": true,
   "dependencies": {
@@ -26,6 +27,7 @@
     "compass": "^0.1.1",
     "d3": "^4.10.2",
     "d3-selection-multi": "^1.0.1",
+    "ngx-d3-graphs": "0.0.6",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
