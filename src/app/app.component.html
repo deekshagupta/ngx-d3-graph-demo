@@ -13,19 +13,22 @@
               <div class="card-body">
                 <h5 class="card-title">Line
                 </h5>
-                <app-d3-graphs [graphId]=id [dataPath]=dataPath></app-d3-graphs>
+<!--                <app-d3-graphs [graphId]=id [dataPath]=dataPath></app-d3-graphs>-->
+                <ndg-ngx-d3-graphs [graphId]="id1"  [jsonInput]="jsonInput1"></ndg-ngx-d3-graphs>
               </div>
             </div>
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title">Bar</h5>
-                <app-d3-graphs [graphId]=id[2] [dataPath]=dataPath></app-d3-graphs>
+<!--                <app-d3-graphs [graphId]=id[2] [dataPath]=dataPath></app-d3-graphs>-->
+                <ndg-ngx-d3-graphs [graphId]="id2"  [jsonInput]="jsonInput2"></ndg-ngx-d3-graphs>
               </div>
             </div>
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title">Dot</h5>
-                <app-d3-graphs [graphId]="id[0]" [dataPath]=dataPath></app-d3-graphs>
+<!--                <app-d3-graphs [graphId]="id[0]" [dataPath]=dataPath></app-d3-graphs>-->
+                <ndg-ngx-d3-graphs [graphId]="id3"  [jsonInput]="jsonInput3"></ndg-ngx-d3-graphs>
               </div>
             </div>
           </div>
@@ -33,8 +36,8 @@
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title">Multi</h5>
-                <app-d3-graphs [graphId]="id[1]" [dataPath]=dataPath></app-d3-graphs>
-
+<!--                <app-d3-graphs [graphId]="id[1]" [dataPath]=dataPath></app-d3-graphs>-->
+                <ndg-ngx-d3-graphs [graphId]="id4"  [jsonInput]="jsonInput4"></ndg-ngx-d3-graphs>
               </div>
             </div>
           </div>

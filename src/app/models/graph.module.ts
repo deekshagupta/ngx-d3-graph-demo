@@ -393,9 +393,9 @@ export class GraphModule {
                     });
                 focus.select(".axis--x").call(xAxis);
 
-                d3.select(graphSelector).find(".axis line").css("stroke", `${configData.config.typeProperties.axisColor}`);
-                d3.select(graphSelector).find(".axis--x text").css("fill", configData.config.typeProperties.axisColor);
-                d3.select(graphSelector).find(".axis--x text").css(configData.config.typeProperties.axisCss);
+                // d3.select(graphSelector).find(".axis line").css("stroke", `${configData.config.typeProperties.axisColor}`);
+                // d3.select(graphSelector).find(".axis--x text").css("fill", configData.config.typeProperties.axisColor);
+                // d3.select(graphSelector).find(".axis--x text").css(configData.config.typeProperties.axisCss);
             }
             var zoom = d3.zoom()
                 .scaleExtent([configData.config.advanced.zoomMinScaleExtent, configData.config.advanced.zoomMaxScaleExtent])
