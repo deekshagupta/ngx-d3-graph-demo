@@ -27,7 +27,7 @@
     "acorn": "^6.4.1",
     "angular2-moment": "^1.8.0",
     "compass": "^0.1.1",
-    "d3": "^4.10.2",
+    "d3": "^5.16.0",
     "d3-selection-multi": "^1.0.1",
     "handlebars": "^4.3.0",
     "html2canvas": "^1.0.0-rc.5",
