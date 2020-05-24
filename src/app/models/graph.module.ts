@@ -144,6 +144,9 @@ export class GraphModule {
             .attr("transform", "translate(" + (width / 2) + " ," + (height + margin.bottom) + ")")
             .attr("class", "axisText")
             .attr("font-size", xAxisFontSize)
+            .styles({
+            "fill": configData.config.typeProperties.axisTextColor
+            })
             .text(configData.config.typeProperties.xAxisText);
 
         xaxistext.attr("x", -(xtext._groups[0][0].getBBox().height + xaxistext._groups[0][0].getBBox().width) / 2);
@@ -194,14 +197,12 @@ export class GraphModule {
             //  d3.select(graphSelector).find(".axis--y text").css("font-size", yAxisFontSize);
             yScaleMap['y1'] = yScale2;
         }
-        // Y dynamic settings
 
-        // d3.select(graphSelector).find(".axis line, .axis path").css("stroke", `${configData.config.typeProperties.axisColor}`);
-        // d3.select(graphSelector).find(".axis--x text, .axis--y text").css("fill", configData.config.typeProperties.axisColor);
-        // d3.select(graphSelector).find(".axisText").css("fill", configData.config.typeProperties.axisTextColor);
-        // d3.select(graphSelector).find(".axis--x text, .axis--y text").css(configData.config.typeProperties.axisCss);
-        // d3.select(graphSelector).find(".axis--x text, .axis--y text").css("font-family", fontFamily);
-        // d3.select(graphSelector).find(".axis--x text").css("font-size", xAxisFontSize);
+        // dynamic settings
+         d3.selectAll(".axis path").style("stroke", configData.config.typeProperties.axisColor);
+         d3.selectAll(".axis text").style("fill", configData.config.typeProperties.axisColor);
+         d3.selectAll(".axis path").styles(configData.config.typeProperties.axisCss);
+         d3.selectAll(".axis line").style("stroke", configData.config.typeProperties.axisColor);
 
         dataElement = focus.selectAll('.dataElement')
             .data(data)
@@ -393,9 +394,11 @@ export class GraphModule {
                     });
                 focus.select(".axis--x").call(xAxis);
 
-                d3.select(graphSelector).find(".axis line").css("stroke", `${configData.config.typeProperties.axisColor}`);
-                d3.select(graphSelector).find(".axis--x text").css("fill", configData.config.typeProperties.axisColor);
-                d3.select(graphSelector).find(".axis--x text").css(configData.config.typeProperties.axisCss);
+                d3.selectAll(".axis path").style("stroke", configData.config.typeProperties.axisColor);
+                d3.selectAll(".axis text").style("fill", configData.config.typeProperties.axisColor);
+                d3.selectAll(".axis path").styles(configData.config.typeProperties.axisCss);
+                d3.selectAll(".axis line").style("stroke", configData.config.typeProperties.axisColor);
+
             }
             var zoom = d3.zoom()
                 .scaleExtent([configData.config.advanced.zoomMinScaleExtent, configData.config.advanced.zoomMaxScaleExtent])
