@@ -1,0 +1,119 @@
+{
+  "config": {
+    "cmd": "none",
+    "typeProperties": {
+      "axisColor": "black",
+      "axisTextColor": "black",
+      "xAxisTicks": 3,
+      "yAxisTicks": [
+        5,
+        3
+      ],
+      "xAxisText": "Timeline",
+      "yAxisText": [
+        "Speed",
+        "Time"
+      ],
+      "decimalDigits": 2,
+      "xUnit": "hr",
+      "yUnit": [
+        "km/hr",
+        "Hr"
+      ],
+      "axisCss": {
+        "shape-rendering": "crispEdges",
+        "stroke-width": "1.7px"
+      },
+      "timeFormat": "HH:mm"
+    },
+    "advanced": {
+      "tooltips": true,
+      "legends": true,
+      "zoom": true,
+      "zoomMinScaleExtent": 1,
+      "zoomMaxScaleExtent": 4
+    }
+  },
+  "data": [
+
+    {
+      "dataConfig": {
+        "name": "Free",
+          "legends": "AirBus",
+        "type": "area",
+        "yIndicator": "y0",
+        "color": "#49b675",
+        "isYNegativeAllowed": false,
+        "css": {
+          "fill-opacity": "0.35",
+          "stroke-width": "2.5px"
+        }
+      },
+      "values": [
+        {
+          "xAxis": 1521074700000,
+          "yAxis": 470
+        },
+        {
+          "xAxis": 1521075600000,
+          "yAxis": 480
+        },
+        {
+          "xAxis": 1521076500000,
+          "yAxis": 590
+        },
+        {
+          "xAxis": 1521077400000,
+          "yAxis": 610
+        },
+        {
+          "xAxis": 1521078300000,
+          "yAxis": 710
+        },
+        {
+          "xAxis": 1521079200000,
+          "yAxis": 620
+        }
+      ]
+    },
+    {
+      "dataConfig": {
+        "name": "Free",
+        "legends": "Train",
+        "type": "area",
+        "yIndicator": "y0",
+        "color": "red",
+        "isYNegativeAllowed": false,
+        "css": {
+          "fill-opacity": "0.45"
+        }
+      },
+      "values": [
+        {
+          "xAxis": 1521074700000,
+          "yAxis": 270
+        },
+        {
+          "xAxis": 1521075600000,
+          "yAxis": 280
+        },
+        {
+          "xAxis": 1521076500000,
+          "yAxis": 190
+        },
+        {
+          "xAxis": 1521077400000,
+          "yAxis": 310
+        },
+        {
+          "xAxis": 1521078300000,
+          "yAxis": 310
+        },
+        {
+          "xAxis": 1521079200000,
+          "yAxis": 420
+        }
+      ]
+    }
+  ]
+}
