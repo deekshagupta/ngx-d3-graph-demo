@@ -154,9 +154,9 @@
         {
             "dataConfig": {
                 "name": "Free",
-                "legends": "L4LY1",
+                "legends": "Cycle",
                 "type": "line",
-                "yIndicator": "y1",
+                "yIndicator": "y0",
                 "color": "green",
                 "isYNegativeAllowed": false,
                 "css": {

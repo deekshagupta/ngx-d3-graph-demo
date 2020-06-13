@@ -1915,3 +1915,14 @@ table.category .cat-list-row1 {
 .bg-primary {
   background-color: #3a3a4f!important;
 }
+.tip {
+padding: 8px;
+background: #fff;
+// line-height: 1.em;
+color: #333;
+position: absolute;
+text-align: left;
+box-sizing: border-box;
+display: inline;
+z-index: 10;
+}

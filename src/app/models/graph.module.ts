@@ -1,5 +1,6 @@
 import * as d3 from 'd3';
 import 'd3-selection-multi';
+import d3Tip from 'd3-tip';
 import * as moment from 'moment';
 export class GraphModule {
     public constructor() {
@@ -50,6 +51,7 @@ export class GraphModule {
         var dataValuesBarCount = 0;
         var dataValuesDot = false;
         var dataValuesLine = false;
+        var dataValuesArea = false;
         var data = configData.data;
 
 
@@ -82,6 +84,14 @@ export class GraphModule {
                 }
             }
         }
+
+        let tip = d3Tip()
+                       .attr('class' , 'tip card')
+                .html(d => {
+                    let content = `<div class="speed"><b>Speed:</b> ${d.yAxis}km/h</div>`;
+                    return content;
+                });
+                svg.call(tip);
         data.forEach(function (d, i) {
 
             if (!yAxisGrp.find((item) => {
@@ -107,6 +117,9 @@ export class GraphModule {
             }));
             if (d.dataConfig.type == 'line' && !dataValuesLine) {
                 dataValuesLine = true;
+            }
+            if (d.dataConfig.type == 'area' && !dataValuesArea) {
+                dataValuesArea = true;
             }
             if (d.dataConfig.type == 'bar') {
                 dataValuesBarCount++;
@@ -145,9 +158,10 @@ export class GraphModule {
             .attr("class", "axisText")
             .attr("font-size", xAxisFontSize)
             .styles({
-            "fill": configData.config.typeProperties.axisTextColor
+                "fill": configData.config.typeProperties.axisTextColor
             })
-            .text(configData.config.typeProperties.xAxisText);
+            .text(configData.config.typeProperties.xAxisText)
+            ;
 
         xaxistext.attr("x", -(xtext._groups[0][0].getBBox().height + xaxistext._groups[0][0].getBBox().width) / 2);
 
@@ -173,7 +187,7 @@ export class GraphModule {
             .text(configData.config.typeProperties.yAxisText[0]);
 
         yaxistext.attr("x", -(ytext._groups[0][0].getBBox().height + yaxistext._groups[0][0].getBBox().width) / 2);
-     //   d3.select(graphSelector).find(".axis--y text").css("font-size", yAxisFontSize);
+        //   d3.select(graphSelector).find(".axis--y text").css("font-size", yAxisFontSize);
         yScaleMap['y0'] = yScale;
         if (yAxisGrp.length > 1) {
             var yScale2 = d3.scaleLinear()
@@ -199,10 +213,10 @@ export class GraphModule {
         }
 
         // dynamic settings
-         d3.selectAll(".axis path").style("stroke", configData.config.typeProperties.axisColor);
-         d3.selectAll(".axis text").style("fill", configData.config.typeProperties.axisColor);
-         d3.selectAll(".axis path").styles(configData.config.typeProperties.axisCss);
-         d3.selectAll(".axis line").style("stroke", configData.config.typeProperties.axisColor);
+        d3.selectAll(".axis path").style("stroke", configData.config.typeProperties.axisColor);
+        d3.selectAll(".axis text").style("fill", configData.config.typeProperties.axisColor);
+        d3.selectAll(".axis path").styles(configData.config.typeProperties.axisCss);
+        d3.selectAll(".axis line").style("stroke", configData.config.typeProperties.axisColor);
 
         dataElement = focus.selectAll('.dataElement')
             .data(data)
@@ -215,7 +229,44 @@ export class GraphModule {
 
         xScale.domain([newMinValue, newMaxValue]);
         origScale.domain([newMinValue, newMaxValue]);
+        if (dataValuesArea) {
+            var area1 = d3.area()
+                .curve(d3.curveMonotoneX)
+                .x(d => xScale(d.xAxis))
 
+                .y0(d => yScale2(d.yAxis))
+                .y1(height);
+            var area0 = d3.area()
+                .curve(d3.curveMonotoneX)
+                .x(d => xScale(d.xAxis))
+                .y0(height)
+                .y1(d => yScale(d.yAxis));
+                    dataElement.append('path')
+                .attr("fill", function (d) {
+                    return d.dataConfig.color;
+                })
+                .style("stroke", function (d) {
+                                   return d.dataConfig.color;
+                               })
+                .attr('d', function (d) {
+                    if (d.dataConfig.type == 'area') {
+                        if (d.dataConfig.yIndicator == 'y0')
+                            return area0(d.values);
+                        else
+                            return area1(d.values);
+                    }
+                })
+                .attrs(function (d) {
+                    return d.dataConfig.css;
+                });
+
+            // Adding a tooltip
+            if (configData.config.advanced.tooltips && dataElement) {
+                yAxisGrp.forEach(function (d, i) {
+                    createTooltip(dataElement, yAxisGrp[i], i);
+                });
+            }
+         }
         if (dataValuesLine) {
             // Add line into SVG
             var lineY0 = d3.line()
@@ -232,12 +283,13 @@ export class GraphModule {
                 .attr('fill', 'none')
                 .attr("class", "line")
                 .attr("shape-rendering", "auto")
+                .style('stroke-width','1.5px')
                 .style("stroke", function (d) {
                     return d.dataConfig.color;
                 })
                 .style("clip-path", `url(#${pathClip})`)
                 .attr('d', function (d) {
-                    if (d.dataConfig.type == 'line') {
+                    if (d.dataConfig.type == 'line' || d.dataConfig.type == 'area') {
                         if (d.dataConfig.yIndicator == 'y0')
                             return lineY0(d.values);
                         else
@@ -501,6 +553,7 @@ export class GraphModule {
                     .style("cursor", "pointer")
                     .append("text")
                     .attr("class", "text")
+                    .attr('fill','black')
                     .text(`${+d.yAxis.toFixed(configData.config.typeProperties.decimalDigits)}` + ' ' + configData.config.typeProperties.yUnit[yAxisInd.includes('0') ? 0 : 1])
                     .attr("x", d => xScale(d.xAxis) + 5)
                     .attr("y", d => yScale(d.yAxis) - 10);
@@ -526,7 +579,7 @@ export class GraphModule {
                 .attr("class", "circle-group")
                 .selectAll("circle")
                 .data(function (d) {
-                    if (d.dataConfig.type == 'line') {
+                    if (d.dataConfig.type == 'line' ||d.dataConfig.type == 'area') {
                         if (d.dataConfig.yIndicator == yAxisInd)
                             return d.values;
                         else
@@ -539,11 +592,11 @@ export class GraphModule {
                 }).enter()
                 .append("g")
                 .attr("class", "circle")
-                .on("mouseover", function (d) {
-                    getMouseOverValues.call(this, d);
+                .on("mouseover", function (d,i,n) {
+                    tip.show(d, n[i]);
                 })
-                .on("mouseout", function (d) {
-                    getMouseOutValues.call(this);
+                .on("mouseout", function (d,i,n) {
+                    tip.hide();
                 })
                 .append("circle")
                 .attr("class", "circle-element")
@@ -580,13 +633,12 @@ export class GraphModule {
                         return [];
                     }
 
-                })
-                .on("mouseover", function (d) {
-                    getMouseOverValues.call(this.parentNode, d);
-                })
-                .on("mouseout", function (d) {
-                    getMouseOutValues.call(this.parentNode);
-                });
+                }) .on("mouseover", function (d,i,n) {
+                                      tip.show(d, n[i]);
+                                  })
+                                  .on("mouseout", function (d,i,n) {
+                                      tip.hide();
+                                  });
 
             dataElement.selectAll('[id="bary' + index + '"]')
                 .on("mouseover", function (d) {

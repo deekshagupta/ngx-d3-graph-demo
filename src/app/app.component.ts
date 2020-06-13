@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public id: Array<string> = ['line', 'bar', 'dot', 'multi'];
+  public id: Array<string> = ['line', 'bar', 'dot', 'multi','area'];
   title = 'ngx-d3-graph-demo';
 }
